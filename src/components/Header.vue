@@ -1,8 +1,10 @@
 <template>
   <header>
         <div class="container">
-            <img src="../assets/img/dc-logo.png" alt="logo">
-
+            <div>
+                <img src="../assets/img/dc-logo.png" alt="logo">
+            </div>
+            
             <nav>
                 <ul>
                     <li><a href="#">characters</a></li>
@@ -28,6 +30,33 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "../assets/style/partials/variable.scss";
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    }
 
+    nav{
+        ul{
+            display: flex;
+            list-style: none;
+
+            li a{
+                padding: 60px 10px;
+                text-decoration:none;
+                text-transform: uppercase;
+                color: $colorblack;
+                font-weight:bold;
+                font-size: 13px;
+                &:hover{
+                    color: $colorblue;
+                    border-bottom: 3px solid $colorblue;
+
+                }
+            }
+        }
+    }
 </style>
