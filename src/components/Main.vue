@@ -16,7 +16,7 @@ export default {
 <style scoped lang="scss">
 
     .sfondo{
-        height: 100px;
+        height: 150px;
         background-color: black;
         display: flex;
         align-items: center;

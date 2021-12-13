@@ -45,9 +45,9 @@ export default {
             list-style: none;
 
             li a{
-                padding: 60px 10px;
+                padding: 62px 10px;
                 text-decoration:none;
-                text-transform: uppercase;
+                text-transform: $uppercase;
                 color: $colorblack;
                 font-weight:bold;
                 font-size: 13px;
