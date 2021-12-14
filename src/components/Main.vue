@@ -1,26 +1,33 @@
 <template>
   <div class="sfondo">
-      <div class="container">
-          <p> [Content goes here] </p>
+      <div class="jumbo">
+          <img src="../assets/img/jumbotron.jpg" alt="">
       </div>
+      <Card/>
   </div>
 </template>
 
 <script>
+import Card from './Card/Card.vue'
 export default {
-    name: "Main"
+    name: "Main",
+    components: {
+    Card
+  }
 }
 </script>
 
 
 <style scoped lang="scss">
 
-    .sfondo{
-        height: 150px;
-        background-color: black;
-        display: flex;
-        align-items: center;
-    }
+
+    img{
+            width: 100vw;
+            height: 400px;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
 
     p{
         color: white;
