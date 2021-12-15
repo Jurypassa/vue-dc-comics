@@ -1,37 +1,43 @@
 <template>
   <div class="sfondo">
-      <div class="container">
-          <div class="box">
-            <img src="../../assets/img/buy-comics-digital-comics.png" alt="logo 1">
-            <span>digital comics</span>
-          </div>
-
-          <div class="box">
-            <img src="../../assets/img/buy-comics-merchandise.png" alt="logo 2">
-            <span>dc merchandise</span>
-          </div>
-
-          <div class="box">
-            <img src="../../assets/img/buy-comics-subscriptions.png" alt="logo 3">
-            <span>subscription</span>
-          </div>
-
-          <div class="box">
-            <img src="../../assets/img/buy-comics-shop-locator.png" alt="logo 4">
-            <span>comic shop locator</span>
-          </div>
-
-          <div class="box">
-            <img src="../../assets/img/buy-dc-power-visa.svg" alt="logo 5">
-            <span>dc power visa</span>
-          </div>
+    <div class="container">
+      <div class="box" v-for="(link, index) in links" :key="index">
+        <img :src="require(`../../assets/img/${link.img}`)" :alt="link.span">
+        <span>{{link.span}}</span>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: "Top"
+    name: "Top",
+    data(){
+      return{
+        links: [
+          {
+            "img": "buy-comics-digital-comics.png",
+            "span": "digital comics",
+          },
+          {
+            "img": "buy-comics-merchandise.png",
+            "span": "digital comics",
+          },
+          {
+            "img": "buy-comics-subscriptions.png",
+            "span": "digital comics",
+          },
+          {
+            "img": "buy-comics-shop-locator.png",
+            "span": "digital comics",
+          },
+          {
+            "img": "buy-dc-power-visa.svg",
+            "span": "digital comics",
+          },
+        ]
+      }
+    }
 }
 </script>
 
@@ -52,9 +58,17 @@ export default {
     display: flex;
     align-items: center;
 
-    img{
-      height: 45px;
+    &:last-child{
+      img{
+        height: 40px;
+      }
     }
+
+    img{
+      height: 50px;
+
+    }
+    
 
     span{
       color: $colorwhite;
