@@ -1,13 +1,12 @@
 <template>
-  <div class="sfondo">
-      <div class="titolo">
-          <h2>current series</h2>
-      </div>
-      <div class="container">
-        <button>load more</button>
-      </div>
-      
-  </div>
+    <div class="sfondo">
+        <div class="container">
+            <div class="box" v-for="(card, index) in cards" :key="index">
+                <img :src="card.thumb" :alt="card.series">
+                <p>{{card.series}}</p>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -96,22 +95,31 @@ export default {
 
 <style scoped lang="scss">
 @import "../../assets/style/partials/variable.scss";
+    .container{
+        padding: 40px;
+        display: flex;
+        flex-wrap: wrap;
 
-    .sfondo{
-        height: 500px;
-        background-color: #1c1c1c;
-        position: relative;
-    }
+        .box{
+            width: calc(100% / 6);
+            padding: 15px;
+            height: 250px;
 
-    .titolo{
-        position: absolute;
-        left: 300px;
-        top: -20px;
-        width: 220px;
-        display: block;
-        color: $colorwhite;
-        text-transform: uppercase;
-        background-color: $colorblue;
-        padding: 5px 10px;
+            img{
+            width: 100%;
+            height: 68%;
+            object-fit: cover;
+            object-position: top;
+            }
+
+            p{
+                color: $colorwhite;
+                text-transform: $uppercase;
+                font-size: 15px;
+                padding-top: 15px;
+            }
+        }
+
+        
     }
 </style>
